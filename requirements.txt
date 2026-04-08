@@ -1,0 +1,11 @@
+## Required Dependencies
+
+### Backend
+```bash
+npm install express socket.io cors
+```
+
+### Frontend
+```bash
+npm install socket.io-client framer-motion lucide-react
+```

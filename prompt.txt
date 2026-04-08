@@ -1,0 +1,35 @@
+# AI Integration Prompt: Live Notification Toolkit
+
+Act as an expert Full-Stack Developer. I have a reusable "Live Notification Toolkit" that needs to be integrated into my current system. Follow these instructions carefully:
+
+## 1. Context
+The toolkit is located in the `/toolkit` directory and provides a multi-channel real-time notification system using Socket.io (Backend) and React Context (Frontend).
+
+## 2. Dependencies
+Ensure the following are installed:
+- Backend: `socket.io`
+- Frontend: `socket.io-client`, `framer-motion`, `lucide-react`
+
+## 3. Implementation Steps
+
+### Step A: Backend Setup
+1. Import `notificationService` from `./toolkit/backend/notification-service.js`.
+2. In the main server file (e.g., `index.js`), initialize it using `notificationService.init(httpServer)`.
+3. To send notifications from any controller or logic, use:
+   `notificationService.notify(message, channel, type)` 
+   - Channels: 'system', 'chat', 'admin'
+   - Types: 'info', 'success', 'warning', 'error'
+
+### Step B: Frontend Setup
+1. Wrap the root component (e.g., in `main.jsx`) with `NotificationProvider` from `./toolkit/frontend/NotificationContext.jsx`. Pass the `socketUrl` prop.
+2. In the main layout or dashboard, import:
+   - `useNotification` from `./toolkit/frontend/useNotification.js`
+   - `NotificationContainer` from `./toolkit/frontend/components/NotificationToast.jsx`
+3. Initialize the hook: `const { notifications, removeNotification } = useNotification();`
+4. Render the `<NotificationContainer />` at the top level of the dashboard.
+
+## 4. Examples
+- If I ask to "Notify the admin when a new user signs up", use the `admin` channel with `success` type.
+- If I ask for "Chat message alerts", use the `chat` channel.
+
+Always maintain the glassmorphism aesthetic provided in the toolkit's `NotificationToast.jsx`.
