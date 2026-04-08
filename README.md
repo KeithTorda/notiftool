@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Live Notification Toolkit 🚀
 
 A modular, multi-channel real-time notification system for React and Node.js.
@@ -78,3 +79,6 @@ The toolkit supports the following channels out-of-the-box:
 - `chat`: Emerald theme, Message icon.
 - `admin`: Rose theme, Alert icon.
 - `default`: Slate theme, Bell icon.
+=======
+# notiftool
+>>>>>>> 038aad01db572f4e3c75852b75dec615cb0479dc
